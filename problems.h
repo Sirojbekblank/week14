@@ -1,7 +1,3 @@
-//
-// Created by Sirojbek on 11/27/2024.
-//
-
 #include <vector>
 using namespace std;
 void delete11 ( vector < int > & v ) {
@@ -29,15 +25,13 @@ void insertMany ( vector < int > &v , int a , int b ) {
 }
 
 int* allocateAndSet(int a, int b){
+    if(a>b) {
+        return NULL;
+    }
     int *arr = new int[b-a+1];
-    if(a<=b) {
         for(int i = 0; i < b-a; i++ ) {
             arr[i] = a+i;
         }
-    }
-    else if(a>b) {
-        return NULL;
-    }
     return arr;
 }
 void deallocate(int* arr) {
