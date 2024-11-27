@@ -13,13 +13,13 @@ void insertMany ( vector < int > &v , int a , int b ) {
     if(v.size()%2==0) {
         x/=2;
         for(int i = x; i < x+a; i++ ) {
-            v.emplace(v.begin()+i,b);
+            v.insert(v.begin()+i,b);
         }
     }
     else {
         x=x/2+1;
         for(int i = x; i < x+a; i++ ) {
-            v.emplace(v.begin()+i,b);
+            v.insert(v.begin()+i,b);
         }
     }
 }
@@ -29,7 +29,7 @@ int* allocateAndSet(int a, int b){
         return NULL;
     }
     int *arr = new int[b-a+1];
-        for(int i = 0; i < b-a; i++ ) {
+        for(int i = 0; i < b-a+1; i++ ) {
             arr[i] = a+i;
         }
     return arr;
@@ -60,6 +60,7 @@ int **transposed(int **arr, int n, int m) {
             *(*(newArr+j)+i) = *(*(arr+i)+j);
         }
     }
+    delete[] arr;
 
     return newArr;
 }
