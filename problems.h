@@ -1,10 +1,12 @@
 #include <vector>
 using namespace std;
 void delete11 ( vector < int > & v ) {
-    int *ptr = &v[0];
     for(int i = 0; i < v.size(); i++ ) {
-        if(*(ptr+i)%11==0) {
+        if(v[i]%11==0) {
             v.erase(v.begin()+i);
+        }   
+        else {
+            i++;
         }
     }
 }
