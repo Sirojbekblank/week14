@@ -30,7 +30,7 @@ void insertMany ( vector < int > &v , int a , int b ) {
 
 int* allocateAndSet(int a, int b){
     int *arr = new int[b-a+1];
-    if(a<b) {
+    if(a<=b) {
         for(int i = a; i < b; i++ ) {
             arr[i] = a+i;
         }
@@ -63,7 +63,7 @@ int **transposed(int **arr, int n, int m) {
     }
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < m; j++) {
-            *(*(newArr+i)+j) = *(*(arr+j)+i);
+            *(*(newArr+j)+i) = *(*(arr+i)+j);
         }
     }
 
