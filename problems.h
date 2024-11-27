@@ -4,9 +4,9 @@ void delete11 ( vector < int > & v ) {
     for(int i = 0; i < v.size(); i++ ) {
         if(v[i]%11==0) {
             v.erase(v.begin()+i);
-        }   
+        }
         else {
-            i++;
+            ++i;
         }
     }
 }
@@ -46,6 +46,7 @@ int*reallocate(int *arr, int N, int n) {
     for(int i = 0; i < size; i++) {
         *(newArr+i)=*(arr+i+n);
     }
+    delete[] arr;
 
     return newArr;
 }
@@ -62,7 +63,6 @@ int **transposed(int **arr, int n, int m) {
             *(*(newArr+j)+i) = *(*(arr+i)+j);
         }
     }
-    delete[] arr;
 
     return newArr;
 }
